@@ -45,6 +45,11 @@ public class AddActicity extends AppCompatActivity {
                     if (inserted_id != -1){
                         Toast.makeText(getApplicationContext(), "Inserted Successfully",
                                 Toast.LENGTH_LONG).show();
+
+//                        Intent i = new Intent(getApplicationContext(), ScheduledNotificationReceiver.class);
+//                        i.putExtra("taskName", taskName);
+//                        i.putExtra("taskDesc", taskDesc);
+//                        startActivity(i);
                     }
                 }
             }
