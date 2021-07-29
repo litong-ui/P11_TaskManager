@@ -24,6 +24,7 @@ public class ScheduledNotificationReceiver extends BroadcastReceiver {
             channel.setDescription("This is for default notification");
             notificationManager.createNotificationChannel(channel);
         }
+
         Intent i = new Intent(context, MainActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity(context, reqCode, i, PendingIntent.FLAG_CANCEL_CURRENT);
 
