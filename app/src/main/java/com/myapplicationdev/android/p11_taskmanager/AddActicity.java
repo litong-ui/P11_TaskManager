@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AddActicity extends AppCompatActivity {
 
@@ -26,7 +27,26 @@ public class AddActicity extends AppCompatActivity {
         btnAddTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                DBHelper db = new DBHelper(getApplicationContext());
+                String taskName = "";
+                if (etName.getText().toString().equalsIgnoreCase("")){
+                    etName.setError("Please enter task name");
+                } else {
+                    taskName = etName.getText().toString();
+                }
+                String taskDesc = "";
+                if (etDesc.getText().toString().equalsIgnoreCase("")){
+                    etDesc.setError("Please enter description");
+                } else {
+                    taskDesc = etDesc.getText().toString();
+                }
+                if (!(taskName.equals("") || taskDesc.equals(""))){
+                    long inserted_id = db.insertTask(taskName, taskDesc);
+                    if (inserted_id != -1){
+                        Toast.makeText(getApplicationContext(), "Inserted Successfully",
+                                Toast.LENGTH_LONG).show();
+                    }
+                }
             }
         });
         btnCancel.setOnClickListener(new View.OnClickListener() {
