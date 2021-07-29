@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class AddActicity extends AppCompatActivity {
+public class AddActivity extends AppCompatActivity {
 
     EditText etName, etDesc;
     Button btnAddTask, btnCancel;
