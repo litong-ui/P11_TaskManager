@@ -36,4 +36,10 @@ public class Task implements Serializable{
     public void setDesc(String desc) {
         this.desc = desc;
     }
+
+    @Override
+    public String toString() {
+        return id + " " + taskName + '\n' +
+                desc;
+    }
 }
