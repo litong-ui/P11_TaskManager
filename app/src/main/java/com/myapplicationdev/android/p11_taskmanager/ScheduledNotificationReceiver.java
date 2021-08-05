@@ -29,9 +29,11 @@ public class ScheduledNotificationReceiver extends BroadcastReceiver {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             NotificationChannel channel = new NotificationChannel("default", "Default Channel", NotificationManager.IMPORTANCE_HIGH);
             channel.setDescription("This is for default notification");
-            notificationManager.createNotificationChannel(channel);
+
             channel.enableVibration(true);
             channel.enableLights(true);
+
+            notificationManager.createNotificationChannel(channel);
         }
 
         long id = intent.getLongExtra("id", 0);
